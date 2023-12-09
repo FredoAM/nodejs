@@ -4,6 +4,8 @@ const PORT = 3000;
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 const htmlFilePath = path.join(__dirname, 'public/index.html');
 
 app.get('/', (req, res) => {
