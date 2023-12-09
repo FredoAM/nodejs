@@ -11,13 +11,29 @@
 //   console.log(`Server running at http://localhost:${PORT}/`);
 // });
 
+// const express = require('express');
+// const PORT = 3000;
+
+// const app = express();
+
+// app.get('/', (req, res) => {
+//   res.status(200).send('Hello World!');
+// });
+
+// app.listen(PORT, () => {
+//   console.log(`Server running at http://localhost:${PORT}/`);
+// });
+
 const express = require('express');
+const path = require('path');
 const PORT = 3000;
 
 const app = express();
 
+const htmlFilePath = path.join(__dirname, 'index.html');
+
 app.get('/', (req, res) => {
-  res.status(200).send('Hello World!');
+  res.sendFile(htmlFilePath);
 });
 
 app.listen(PORT, () => {
